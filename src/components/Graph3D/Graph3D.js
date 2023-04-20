@@ -59,6 +59,7 @@ export default class Graph3D extends React.Component {
             }
             this.renderScene();
             this.request = window.requestAnimationFrame(animLoop);
+            this.interval = setInterval();
         }
 
         animLoop();
@@ -67,6 +68,7 @@ export default class Graph3D extends React.Component {
     componentWillUnmount() {
         window.cancelAnimationFrame(this.request);
         this.graph = null;
+        creatInterval(this.interval);
     }
 
     wheel(event) {
